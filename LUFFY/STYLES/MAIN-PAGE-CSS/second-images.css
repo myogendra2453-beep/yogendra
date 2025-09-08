@@ -1,0 +1,46 @@
+.second-images {
+  columns: 180px;
+  column-gap: 15px;
+}
+.main-images-parent {
+  width: 100%;
+}
+.grid-item {
+  break-inside: avoid;
+  background-color: rgb(174, 174, 174);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.image-wrapper{
+    position: relative;
+
+}
+.image-wrapper i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor:pointer ;
+}
+.image-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+}
+
+.image-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 8px;
+  border-top: 1px solid #eee;
+}
+
+.image-footer i {
+  font-size: 18px;
+  color: rgb(56, 56, 56);
+  cursor: pointer;
+}

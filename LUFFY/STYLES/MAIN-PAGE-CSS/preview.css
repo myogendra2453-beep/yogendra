@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'dandadan';
+  src: url('../../FONTS/Beethoven.ttf') format('truetype');
+}
+
+.preview{
+    height: 600px;
+    width: 800px;
+  background-color: rgb(174, 174, 174);    /* flex-shrink: 0; */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* PREVIEW WIDTH AND SECOND-IMAGES WIDTH SHOULD BE SAME */
+.preview{
+    display: grid;
+    grid-template-columns: 90px 400px 310px;
+    padding: 15px;
+}
+.preview-title{
+    /* background-color: rgb(255, 255, 255); */
+    margin-right: 8px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preview-title h1{
+    rotate: -90deg;
+    white-space: nowrap;
+    font-family: 'dandadan' , sans-serif;
+    font-weight: 100;
+    letter-spacing: 4px;
+}
+.preview-image{
+    background-color: rgb(255, 255, 255); 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 7px;
+
+
+}
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+
+}
+
+.preview-description{
+    /* background-color: rgb(255, 128, 128); */
+    margin-left: 8px;
+}
+.description-wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.anime-name{
+    height: 100px;
+    width: 100%;
+    /* background-color: rgb(112, 255, 122); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      background-color: rgb(112, 200, 255);
+
+
+}
+.anime-name h1{
+    font-family: 'dandadan' , sans-serif;
+    font-weight: 100;
+    letter-spacing: 4px;
+    
+
+}
+.description{
+    height: 178px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center; 
+
+}
+.description .video{
+
+width: 100%;
+object-fit: fil;
+}
+video{
+    width: 100%;
+}
+.description .comments{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 800,
+  'GRAD' 0,
+  'opsz' 24
+}
+.count{
+    display: flex;
+  background-color: rgb(112, 200, 255);
+    justify-content: space-evenly;
+}
+.favourites-count{
+    display: flex;
+    /* background-color: violet; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.downloads-count{
+    display:flex;
+    /* background-color: orange; */
+    flex-direction: column;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.count span{
+    padding: 15px;
+    line-height: 1;
+}
+.count h4{
+    display: inline;
+    line-height: 1;
+}
+.count span,
+.count h4 {
+  padding: 3px;
+  margin: 0;
+  line-height: 1; /* removes extra space */
+  color: white;
+}
+
+.count span {
+    margin-top: 4px;
+  font-size: 40px;
+}
+
+.count h4 {
+  font-size: 16px;
+}
+
+
+.tags {
+  height: 100px;
+  width: 93.5%;
+  background-color: rgb(112, 200, 255);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 25px;
+  padding-left: 10px;
+  padding-bottom: 25px;
+  padding-right: 10px;
+  align-content: center;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tags::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.tag {
+  background-color: rgb(255, 255, 255);
+  display: inline-flex; /* or flex */
+  align-items: center;
+  gap: 8px; /* spacing between text & icon */
+  padding: 6px;
+  border-radius: 15px;
+  height: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.tag i{
+    cursor: pointer;
+}
+.buttons{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(243, 255, 108);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button{
+    height: 40px;
+    width: 900px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.preview-icons{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    /* background-color: white; */
+    margin-right: 25px;
+
+}
+.preview-icons i{
+    font-size: 25px;
+    cursor: pointer;
+}
