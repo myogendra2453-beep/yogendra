@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="todo">
+    <p>TO DO LIST</p>
+    <div class="part">
+      <div class="input-div">
+        <input type="text" placeholder="add task" class="js-task-input">
+        <input type="time" class="js-time-input">
+        <input type="date" class="js-date-input">
+        <button class="add-button" onclick="add();">ADD</button>
+      </div>
+      <div class="task-div"></div>
+    </div>
+  </div>
+
+  <script>
+    const dataArray = [ 
+      // { task: 'eating', time: '12:30', date: '2025-03-12', status: 1 },
+      // { task: 'studying', time: '14:00', date: '2025-03-12', status: 0 },
+      // { task: 'coding', time: '16:00', date: '2025-03-12', status: 0 }
+    ];
+    
+    function render() {
+      let displayHtml = '';
+
+      for (let i = 0; i < dataArray.length; i++) {
+        const array = dataArray[i];
+        const doneText = array.status == 1 ? '✔️' : 'DONE';
+
+        const html = `
+          <div class="task">${array.task}</div>
+          <div class="time">${array.time}</div>
+          <div class="date">${array.date}</div>
+          <button class="rem ${array.status === 1 ? 'done-green' : ''}" onclick="toggleStatus(${i})">${doneText}</button>
+          <button class="done" onclick="dataArray.splice(${i},1); render();">CUT</button>
+        `;
+        displayHtml += html;
+      }
+
+      document.querySelector('.task-div').innerHTML = displayHtml;
+    }
+
+    function toggleStatus(i) {
+      dataArray[i].status = dataArray[i].status === 1 ? 0 : 1;
+      render();
+    }
+
+    function add() {
+      const taskInput = document.querySelector('.js-task-input');
+      const timeInput = document.querySelector('.js-time-input');
+      const dateInput = document.querySelector('.js-date-input');
+
+      const task = taskInput.value;
+      const time = timeInput.value;
+      const date = dateInput.value;
+
+      if (task === '' && date === '') {
+        alert('NO INPUT TAKEN!!');
+      } else if (task === '') {
+        alert('NO TASK INPUT TAKEN!!');
+      } else if (time === '') {
+        alert('NO TIME INPUT TAKEN!!');
+      } else if (date === '') {
+        alert('NO DATE INPUT TAKEN!!');
+      } else {
+        dataArray.push({ task, time, date, status: 0 });
+        taskInput.value = '';
+        timeInput.value = '';
+        dateInput.value = '';
+        render();
+      }
+    }
+
+    render(); // initial render
+  </script>
+</body>
+</html>
